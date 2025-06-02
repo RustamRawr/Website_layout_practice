@@ -1,0 +1,244 @@
+/* Стили для оверлея (затемнение фона) */
+.login-overlay {
+	display: none; /* По умолчанию, форма ввода скрыта */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0); /* 0.7 */
+	z-index: 10;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s ease; /* ease - волнообразная скорость изменения цвета */
+}
+
+/* Активное состояние оверлея */
+.login-overlay.active { /* используем актив в js */
+	background-color: rgba(0,0,0,0.7);
+	backdrop-filter: blur(4px); /* !Размытие всего фона за формой */
+}
+
+/* Контейнер для формы */
+.login-container {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	transform: translateY(50px); /*  */
+	opacity: 0;
+	transition: transform 0.4s ease, opacity 0.4s ease; /*  */
+}
+
+/* Параметры для активного состояния контейнера */
+.login-overlay.active .login-container { /*  */
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Тело формы */
+.login-form {
+	background-color: rgba(40,40,44,0.8);
+	border-radius: 15px;
+	padding: 30px;
+	box-shadow: 0 5px 20px rgba(155,0,0,0.4);
+	position: relative;
+}
+
+/*-----------------------------------*/
+/* Плавное появление элементов формы */
+.login-form > * {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.login-overlay.active .login-form > * {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Задержки для последовательного появления элементов */
+.login-form > *:nth-child(1) { transition-delay: 0.1s; }
+.login-form > *:nth-child(2) { transition-delay: 0.1s; }
+.login-form > *:nth-child(3) { transition-delay: 0.2s; }
+.login-form > * form > * { transition-delay: 0.25s; }
+
+/*-----------------------------------*/
+
+/* Логотип */
+.login-logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.login-logo .login_icon {
+	width: 50px;
+	height: 50px;
+}
+
+/* Заголовок */
+.login-title {
+	font-family: 'Tektur_Condensed-Bold', sans-serif;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 25px;
+	color: rgba(255,255,255,1.00);
+}
+
+/* Группа полей формы */
+.form-group {
+	max-resolution: 20px;
+	margin-bottom: 15px; /*  */
+}
+
+/* Метки для полей */
+.form-group lable {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: rgba(200,200,200,1.00);
+}
+
+/* Поля ввода */
+.form-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid rgba(80,80,80,1.00);
+	border-radius: 5px;
+	background-color: rgba(30,30,34,0.95);
+	color: rgba(255,255,255,1.00);
+	font-family: 'Tektur_Condensed-Regular', sans-serif;
+	font-size: 16px;
+	box-sizing: border-box; /*  */
+}
+
+/* Контейнер для поля пароля (для позиционирования иконки глаза) */
+.password-container {
+	position: relative;
+}
+
+/* Кнопка переключения видимости пароля */
+.password-toggle {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%); /*  */
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.eye-icon {
+	width: 20px;
+	height: 20px;
+	opacity: 0,7;
+}
+
+.eye-icon:hover {
+	opacity: 1;
+}
+
+/* Кнопка - ссылка "Что такое Engine-Key" */
+.key-info {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+.info-link {
+	color: rgba(180,180,180,1.00); /*  */
+	text-decoration: none;
+	font-size: 14px;
+	transition: color 0.3s;
+}
+
+.info-link:hover {
+	color: rgba(255,255,255,1.00);
+}
+
+/* Кнопка - ссылка "Забыли пароль?" */
+.forgot-password {
+	text-align: center; /*  */
+	margin-bottom: 20px;
+}
+
+.forgot-link {
+	color: rgba(180,180,180,1.00);
+	text-decoration: underline;
+	font-size: 14px;
+	transition: color 0.3s;
+}
+
+.forgot-link:hover {
+	color: rgba(255,255,255,1.00);
+}
+
+/* Кнопки входа и создания аккаунта */
+.login-button {
+	width: 100%; /* кнопка на ширину всего тела формы */
+	padding: 12px; /* настройка общего размера кнопки */
+	border: none;
+	border-radius: 5px;
+	font-family: 'Tektur_Condensed-Regular', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 15px;
+	transition: background-color 0.6s;
+}
+
+.login-button.gray {
+	background-color: rgba(100,100,100,1.00);
+	color: rgba(255,255,255,1.00);
+}
+
+.login-button.blue {
+	background-color: rgba(7,177,255,1.00);
+	color: rgba(255,255,255,1.00);
+}
+
+.login-button.gray:hover {
+	background-color: rgba(130,130,130,1.00);
+}
+
+.login-button.blue:hover {
+	background-color: rgba(50,200,255,1.00);
+}
+
+/* Разделитель "или" */
+.divider-container {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+}
+
+
+.divider-line {
+	flex-grow: 1; /*  */
+	height: 1px;
+	background-color: rgba(100,100,100,0.5);
+}
+
+.divider-text {
+	padding: 0 15px; /*  */
+	color: rgba(180,180,180,1.00);
+	font-size: 14px;
+}
+.close-button {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 25px;
+	height: 25px;
+	background: none;
+	border: none;
+	color: rgba(180,180,180,1.0);
+	font-size: 18px;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.close-button:hover {
+	color: rgba(255,255,255,1.00);
+}

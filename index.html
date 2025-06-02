@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Collider III</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="login.css">
+<!-- Для мобильных устройств и Apple-устройств -->
+	<link rel="apple-touch-icon" href="img/apple-touch-icon_128Х128.png"> 
+	<!-- Иконки разных размеров для отображение во вкладке браузера -->
+	<link rel="icon" href="./img/favicon_64Х64.png" sizes="64x64" type="image/png">
+	<link rel="icon" href="./img/favicon_32Х32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="./img/favicon_16Х16.png" sizes="16x16" type="image/png">
+	
+</head>
+<body>
+    <main> 
+    <!-- Шапка сайта -->
+		<header>
+			<div class="header_div">
+				
+				<div class="menu_elem"> 
+					<img src="./free-icon-menu-6063509.png" alt="menu" class="menu_icon">
+				</div>
+				
+				<div class="div_logo"> 
+					<div class="logo_icon"> </div>
+					<div class="logo_title">DELTA COLLIDER</div>
+				</div>
+				<!-- Добавляем доп. классы для разных цветов кнопок -->
+				<div class="header_buttons">
+					<button class="head_btn gray">Войти</button>
+					<button class="head_btn blue">Скачать</button> 
+				
+				</div>
+				
+				<!-- <div class=> </div> -->
+				
+				<div class="dropdown"> 
+					<span class="dropdown_button">Поколения</span>
+					<div class="dropdown_content"> 
+					<a href="#">COLLIDER III</a>
+					<a href="#">COLLIDER II</a>
+					<a href="#">COLLIDER I</a>
+					</div>
+				</div>
+				
+			</div>
+		</header>
+<!-- Создаем страницу логина, которая будет появляться при клике на кнопку "Войти" -->
+<div class="login-overlay" id="loginOverlay">
+	<div class="login-container"> 
+		<div class="login-form">
+			
+		<!-- Логотип -->
+			<div class="login-logo">
+				<div class="logo_icon"></div>
+			</div>
+			
+			<!-- Заголовок -->
+			<h2 class="login-title"> Войти </h2>
+			
+			<!-- Форма -->
+			<form>
+				
+				<!-- Поле ввода почты -->
+				<div class="form-group">
+					<label for="email"> Email Адрес </label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				
+				<!-- Поле ввода пароля -->
+				<div class="form-group">
+					<label for="password"> Пароль </label>
+					<div class="password-container">
+						<input type="password" id="password" name="password" required>
+						<button type="button" class="password-toggle" onclick="togglePassword()">
+							<img src="./img/icons8-глаз-48.png" alt="Показать пароль" class="eye-icon">
+						</button>
+					</div>
+				</div>
+				
+				<!-- Разделитель "или" -->
+				
+				<div class="divider-container">
+					<div class="divider-line"></div>
+					<div class="divider-text"> или </div>
+					<div class="divider-line"></div>
+				</div> 
+				
+				<!-- Engine-Key поле -->
+				<div class="form-group">
+					<label for="engine-key"> Engine-key </label>
+					<input type="text" id="engine-key" name="engine-key" required>
+				</div>
+				
+				<!-- Кнопка об Engine-Key -->
+				<div class="key-info">
+					<a href="#" class="info-link"> Что такое Engine-Key? </a>
+				</div>
+				
+				<!-- Кнопка "Забытый пароль" -->
+				<div class="forgot-password">
+					<a href="#" class="forgot-link"> Забыли пароль? </a>
+				</div>
+				
+				<!-- Кнопка входа -->
+				<button type="submit" class="login-button gray"> Войти </button>
+				
+				<!-- Разделитель "или" -->
+				<div class="divider-container">
+					<div class="divider-line"></div>
+					<div class="divider-text"> Создать или войти с помощью </div>
+					<div class="divider-line"></div>
+				</div>
+				
+				<!-- Кнопка создания аккаунта -->
+				<button type="button" class="login-button blue"> Создать аккаунт </button>
+				
+			</form>
+			
+			<!-- Кнопка закрытия -->
+			<button class="close-button" onclick="closeLoginForm()">✕</button>
+			
+		</div>
+	</div>
+</div>
+		
+    <!-- Широкий блок с текстом (и картинкой) -->
+    <section>
+        <div class="main-block">
+			<div class="main-content"> 
+				<div class="main-text"> 
+            		<h1>DELTA COLLIDER III</h1>
+					<p>Добро пожаловать в эпоху будущего! Кибер Движители представляют Вашему вниманию новую версию передового инструмента для разработки 3D/2D игр и симуляции. Окунитесь в новые возможности и узнайте, что наша команда добавила в новом поколении. Мы учли пожелания сообщества и опыт прошлого. 
+					</p>
+					<button class="action-btn blue"> Установить </button>
+					<button class="action-btn doc"> Документация </button>
+				</div>
+				<div class="main-image">
+					<img src="./img/main.jpg" alt="main image" class="rounded-image">
+				</div>
+			</div>
+        </div>
+    </section>
+		
+	<!-- Секция новостей -->
+	<section class="news-section"> 
+		<h2> Новости </h2>
+		<div class="news-container"> 
+			<!-- Блок Новости 1 -->
+			<div class="news-item">
+				<div class="news-content">
+					<div calss="news-image-container">
+						<img src="./img/ashish-r-mishra-BIyqedEm8u4-unsplash.jpg" alt="Новость 1" class="news-image">
+					</div>
+					<div class="news-text">
+						<h3> Состоялся релиз Delta Collider III ! </h3>
+						<p> Мы рады сообщить о выходе нового поколения нашего движка. Улучшенная производительность и новые инструменты ждут вас. </p>
+						<button class="read-more"> Читать&nbsp; </button>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Блок Новости 2--->
+			<div class="news-item">
+				<div class="news-content">
+					<div calss="news-image-container">
+						<img src="./img/jonathan-kemper-zQMN9fLJehM-unsplash16-9.jpg" alt="Новость 2" class="news-image">
+					</div>
+					<div class="news-text">
+						<h3> Демо версия игры D&D: The Adventures of Brayville </h3>
+						<p> Совсем недавно группа наших разработчиков представила демо версию первой игры в серии D&D на нашем новом движке Collider III! </p>
+						<button class="read-more"> Читать&nbsp; </button>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Блок новости 3 -->
+			<div class="news-item">
+				<div class="news-content">
+					<div calss="news-image-container">
+						<img src="./img/nubelson-fernandes--Xqckh_XVU4-unsplash-crop.jpg" alt="Новость 3" class="news-image">
+					</div>
+					<div class="news-text">
+						<h3> Конкурс для разработчиков 🎉 </h3>
+						<p> Участвуйте в ежегодном конкурсе разработке игр на нашем движке и получите шанс выиграть ценные призы от нашей компании! </p>
+						<button class="read-more"> Читать&nbsp; </button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+    <!-- Подвал сайта -->
+	<hr class="divider">
+    <footer>
+        <p class="CR">&copy; 2024-2025, ООО "Кибер движители". Все права защищены. Delta Collider (Дельта Коллайдер) и его логотип являются товарными знаками или зарегистрированными товарными знаками в РФ и в других странах. </p>
+    </footer>
+	
+		
+    </main>
+	<script src="./script.js"></script>
+</body>
+</html>

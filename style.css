@@ -1,0 +1,390 @@
+@font-face {
+    font-family: 'Tektur_Condensed-Regular';
+    src: url('./fonts/Tektur_Condensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Tektur_Condensed-Bold';
+    src: url('./fonts/Tektur_Condensed-Bold.ttf');
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) { /* ! */
+	.main-content {
+		flex-direction: column-reverse; /* Изображение будет сверху на мобильных устройствазх*/
+	}
+	
+	.main-text {
+		padding-right: 0;
+	}
+	
+	.main-image {
+		margin-bottom: 30px;
+	}
+	
+	.news-content {
+		flex-direction: column;
+	}
+	
+	.news-item {
+		flex-basis: 100%; 
+	}
+}
+
+/* Общие стили для страницы */
+body {
+    font-family: 'Tektur_Condensed-Regular', sans-serif;
+	font-size: 16px;
+	background-color: rgba(33,33,33,1.00); /* Цвет фона сайта */
+	color: rgba(255,255,255,1.00); /* Цвет шрифта */
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */ 
+}
+
+/* Стили для шапки сайта */
+header {
+    background-color: rgba(16,16,20,0.70);
+	width: 100%; /* Ширина шапки. Занимает весь экран от края до края*/
+	height: 70px; /* Высота шапки, от неё будут зависить все остальные вложенные дивы */
+	
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd; */
+}
+
+.main-block {
+	
+}
+
+footer {
+	
+}
+
+.header_div {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	
+}
+
+.div_logo {
+	position: absolute;  /* Логотип закрепляется в центре */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирует по горизонтали */
+    display: flex;
+    align-items: center;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.logo_icon {
+	width: 30px;
+	height: 30px;
+	background-image: url("./img/logo_inv.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+}
+
+.logo_title {
+	color: rgba(255,255,255,1.00);
+	font-size: 20px;
+	margin-top: 3px;
+}
+
+.main-block {
+	padding: 40px 20px;
+	background-color: rgba(33,33,33,1.00);
+}
+/* Настройки контейнера для контента и изображения */
+.main-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.main-text {
+	flex: 1;
+	padding-right: 20px;
+}
+
+.main-text h1 {
+	font-family: 'Tektur_Condensed-Bold', sans-serif;
+	font-size: 42px;
+	margin-bottom: 20px;
+	color: rgba(227,143,32,1.00)
+}
+.main-text p {
+	margin-bottom: 30px;
+	line-height: 1.6;
+	font-size: 22px;
+}
+
+.action-btn {
+	font-family: 'Tektur_Condensed-Regular', sans-serif;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.6s;
+}
+
+.action-btn.blue {
+	background-color: rgba(7,177,255,1.00);
+	color: rgba(0,0,0,1.00);
+}
+
+.action-btn.blue:hover {
+    background-color: rgba(223,232,235,1.00);
+}
+
+.action-btn.doc {
+	margin-left: 5px;
+	background-color: rgba(255,255,255,0.15);
+	color: rgba(255,255,255,1.00);
+}
+
+.action-btn.doc:hover {
+	background-color: rgba(158,158,158,1.00);
+}
+
+.main-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.rounded-image {
+	max-width: 100%;
+	height: auto;
+	border-radius: 20px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+	transition: transform 0.3s;
+}
+
+.rounded-image:hover {
+	transform: scale(1.02);
+}
+
+.menu_elem {
+	width: 25px;
+	height: 25px;
+	transform: translate3d(20px, 0px, 0px); /*Перемещаем див вместе с иконкой относительно верхнего левого края 70-25=45/2 = 22.5*/
+	cursor: pointer;
+
+}
+
+.menu_icon {
+	width: 25px;
+	height: 25px;
+	
+}
+.CR {
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	
+}
+
+.divider {
+	width: 90%; /* Ширина полосы относительно краёв */
+	border: none; /* Стандартный тип линии */
+	height: 2px; /* Толщина линии */
+	background-color: rgba(128,128,128,0.30);
+	
+}
+
+.header_buttons {
+	display: flex;
+	gap: 15px; /* Создаём отступ между кнопками внутри блока */
+	justify-content: flex-end;
+	margin-right: 20px;
+	
+}
+
+.head_btn {
+	font-family: 'Tektur_Condensed-Regular', sans-serif;
+	padding: 5px 10px; /* Меняет размеры кнопки */
+	font-size: 16px;
+	border: none; /* Убираем окантовку кнопки */
+	border-radius: 4px; /* Скругление краёв кнопки */
+	cursor: pointer; /* Делает кнопку кликабельной */
+	transition: background-color 0.6s; /* Анимируем появление цвета при наведении на кнопку. Связано с hover */
+
+}
+.head_btn.gray {
+	background-color: rgba(255,255,255,0.15);
+	color: rgba(255,255,255,1.00);
+}
+
+.head_btn.blue {
+	background-color: rgba(7,177,255,1.00);
+	color: rgba(0,0,0,1.00);
+}
+.head_btn.gray:hover {
+	background-color: rgba(158,158,158,1.00); 
+}
+
+.head_btn.blue:hover {
+	background-color: rgba(223,232,235,1.00); 
+}
+
+.dropdown {
+	position: absolute;
+	left: 100px;
+}
+
+.dropdown_button {
+	padding: 5px 10px; /* Создаём невидимые границы вокруг кнопки */
+	color: rgba(255,255,255,1.00);
+	background-color: rgba(16,16,20,0.70); 
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.6s;
+	
+	
+}
+
+.dropdown_button:hover {
+	background-color: rgba(169,169,169,1.00); 
+}
+
+.dropdown_content {
+	display: none; /* Скрываем по умолчанию содержимое контейнера, а именно, выпадающие строки */
+	position: absolute;
+	margin-top: 5px;
+	background-color: rgba(249,249,249,0.55);
+	min-width: 90px;
+	backdrop-filter: blur(4px);
+	/* box-shadow: 0px 8px 16px rgba(0,0,0,0.4); */
+	border: none;
+	border-radius: 10px;
+	z-index: 1; /* Второй слой поверх основного */
+	
+}
+
+.dropdown_content a {
+	color: rgba(0,0,0,1.00);
+	padding: 12px 16px;
+	text-decoration: none; /* Убирает синиюю подсветку и подчёркивание ссылок */
+	display: block; /* Отображает строчки "а" в виде выпадающего списка в виде блока, связь с hover */
+	
+	
+}
+
+.dropdown_content a:hover {
+	background-color: rgba(221,221,221,1.00); /* Подсвечиваем элементы выпадающего списка п */
+	
+}
+
+.dropdown:hover .dropdown_content { /* Позволяет отобразить скрытый список, но только при наведении */
+	display: block;
+}
+
+/*----------------- Секция новостей ------------------*/
+
+/* Стили (параметры) для секции новостей */
+.news-section {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+.news-section h2 {
+	font-family: 'Tektur_Condensed-Bold', sans-serif;
+	font-size: 32px;
+	margin-bottom: 30px;
+	color: rgba(227,143,32,1.00);
+	text-align: left;
+}
+
+.news-container {
+	display: flex;
+	flex-wrap: wrap; /*  */
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.news-item {
+	flex-basis: calc(33.333% - 20px); /*  */
+	background-color: rgba(40,40,44,0.8);
+	border-radius: 10px;
+	overflow: hidden; /* вс что за пределами блока -- скрывается */
+	transition: transform 0.3s, box-shadow 0.3s;
+	box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.news-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 6px 10px rgba(100,0,0,0.30); /*  */
+	background-color: rgba(50,50,54,0.8); /* Изменение цвета фона блока при наведении */
+}
+
+.news-content {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.news-image-container { /*  */
+	overflow: hidden;
+	height: 180px;
+}
+
+.news-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s;
+}
+
+.news-item:hover .news-image { /* Трансформируем блок вместе с картинкой одновременно */
+	transform: scale(1.05);
+}
+
+.news-text {
+	padding: 15px; /* отступы текста внутри блока */
+}
+
+.news-text h3 {
+	font-family: 'Tektur_Condensed-Bold', sans-serif;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: rgba(255,255,255,1.00);
+}
+
+.news-text p {
+	font-size: 16px;
+	margin-bottom: 15px;
+	color: rgba(220,220,220,1.00);
+	line-height: 1.4; /* Отступы между строк */
+}
+
+.read-more { /* Параметры кнопки */
+	font-family: 'Tektur_Condensed-Regular', sans-serif;
+	padding: 8px 15px;
+	font-size: 16px;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: background-color 0.6s;
+	background-color: rgba(7,177,255,1.00);
+	color: rgba(0,0,0,1.00);
+	align-self: flex-start; /*  */
+	margin-top: auto; /*  */
+}
+
+.read-more:hover {
+	background-color: rgba(223,232,235,1.00);
+}
